@@ -4,13 +4,17 @@ channels:
   - defaults
 dependencies:
   - python=3.10
+  - jinja2
   - pandas
-  - numpy
+  - netcdf4
+  - numpy=2.1
   - matplotlib
   - seaborn
   - scipy
   - statsmodels
   - pytest
   - pip
+  - xarray
+  - xesmf
   - pip:
     - -e .
