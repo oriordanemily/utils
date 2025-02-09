@@ -2,7 +2,7 @@ import pytest
 import numpy as np
 import os
 import matplotlib.pyplot as plt
-from utils.debug import sns_plot_and_save, hist_plot_and_save, plt_plot_and_save
+from utils.python.debug import sns_plot_and_save, hist_plot_and_save, plt_plot_and_save
 
 # Fixture to create temporary test data
 @pytest.fixture

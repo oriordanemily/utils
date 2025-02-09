@@ -3,7 +3,8 @@ import xarray as xr
 import numpy as np
 import xesmf as xe
 import pandas as pd
-from atmos.netcdf import standardise_coords, interpolate_irregular_to_regular_grid
+from utils.atmos.netcdf import (standardise_coords, 
+                                interpolate_irregular_to_regular_grid)
 
 # Define the test datasets
 @pytest.fixture

@@ -1,6 +1,6 @@
 import pytest
 import pandas as pd
-from utils.display import add_caption_to_df
+from utils.python.display import add_caption_to_df
 
 @pytest.fixture
 def sample_df():
