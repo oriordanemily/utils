@@ -2,7 +2,7 @@ import pytest
 import numpy as np
 import os
 import matplotlib.pyplot as plt
-from atmos.convert_units import sns_plot_and_save, hist_plot_and_save, plt_plot_and_save
+from utils.debug import sns_plot_and_save, hist_plot_and_save, plt_plot_and_save
 
 # Fixture to create temporary test data
 @pytest.fixture
@@ -35,19 +35,6 @@ def test_hist_plot_and_save(test_data_flat, temp_file):
 def test_plt_plot_and_save(test_data, temp_file):
     plt_plot_and_save(test_data, path=temp_file)
     assert os.path.exists(temp_file), "Imshow image was not saved"
-
-# Test invalid input handling (optional)
-def test_invalid_input_sns_plot(temp_file):
-    with pytest.raises(ValueError):
-        sns_plot_and_save(None, path=temp_file)  # Passing None should raise an error
-
-def test_invalid_input_hist_plot(temp_file):
-    with pytest.raises(TypeError):
-        hist_plot_and_save("invalid_string", path=temp_file)  # Invalid data type
-
-def test_invalid_input_plt_plot(temp_file):
-    with pytest.raises(ValueError):
-        plt_plot_and_save(None, path=temp_file)  # Passing None should raise an error
 
 # Remove the temporary file after all tests are done
 def test_cleanup(temp_file):

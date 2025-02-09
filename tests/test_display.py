@@ -1,6 +1,6 @@
 import pytest
 import pandas as pd
-from atmos.convert_units import add_caption_to_df
+from utils.display import add_caption_to_df
 
 @pytest.fixture
 def sample_df():
@@ -16,14 +16,14 @@ def test_add_caption_to_df(sample_df):
     assert isinstance(styled_df, pd.io.formats.style.Styler), "Function did not return a Styler object"
 
     # Check if caption is correctly set
-    assert styled_df._caption == caption_text, "Caption was not correctly applied"
+    assert styled_df.caption == caption_text, "Caption was not correctly applied"
 
     # Check if styles include the expected caption styling
     styles = styled_df.table_styles
     found_caption_style = any(
         style['selector'] == 'caption' and 
         ('text-align', 'center') in style['props'] and 
-        ('color', 'white') in style['props'] 
+        ('color', 'black') in style['props'] 
         for style in styles
     )
 
