@@ -5,7 +5,7 @@ def add_caption_to_df(df, caption, color='black', fontsize=100):
     styles = [dict(selector="caption",
                        props=[("text-align", "center"),
                               ("font-size", "100%"),
-                              ("color", 'white')])]
+                              ("color", color)])]
 
     df = df.style.set_caption(caption).set_table_styles(styles)
 
