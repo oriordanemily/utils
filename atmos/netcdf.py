@@ -1,6 +1,7 @@
 import xarray as xr
 import xesmf as xe
 
+# List of common coordinate names
 coordinate_names = {
     'latitude': ['lat', 'latitude', 'xlat', 'xlat_u', 'xlat_v'],
     'longitude': ['lon', 'longitude', 'xlon', 'xlong', 'xlong_u', 'xlong_v' 'long'],
