@@ -32,6 +32,8 @@ def interpolate_irregular_to_regular_grid(irregular_data, regular_data, regrid_k
         xarray.Dataset: Dataset containing irregular data interpolated to a regular grid.
     """
 
+    # ! TODO: this currently requires use like wrf_ds['T2'].isel({'Time':0}), needs further testing to see if multiple timesteps can work.
+
     # Convert coordinates to standard names
     irregular_data = standardise_coords(irregular_data)
     regular_data = standardise_coords(regular_data)
